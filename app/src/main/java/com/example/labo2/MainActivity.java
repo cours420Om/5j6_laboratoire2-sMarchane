@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnQuitter;
 
 
+
+
     @Override
     protected void onStart() {
 
@@ -71,9 +73,10 @@ public class MainActivity extends AppCompatActivity {
         chkAccepte = (CheckBox) findViewById(R.id.checkBox3);
         btnSauvegarder = (Button) findViewById(R.id.button3);
         btnQuitter = (Button) findViewById(R.id.button4);
+        ImageView img = (ImageView) findViewById(R.id.iv_avatar);
 
-        /*ImageView img = (ImageView) findViewById(R.id.iv_avatar);
-        img.setImageResource(R.drawable.avatar);*/
+
+        img.setImageResource(R.drawable.avatar);
 
 
 

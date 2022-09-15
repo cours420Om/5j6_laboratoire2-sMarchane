@@ -111,10 +111,11 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="60dp"
         android:text="J'accepte de recevoir l'infolettre pour les nouveaux événements" />
+
     <ImageView
         android:id="@+id/iv_avatar"
-        android:layout_width="152dp"
-        android:layout_height="147dp"
+        android:layout_width="169dp"
+        android:layout_height="166dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
@@ -123,7 +124,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        />
+        tools:srcCompat="@drawable/avatar" />
 
     <TextView
         android:id="@+id/textView"
