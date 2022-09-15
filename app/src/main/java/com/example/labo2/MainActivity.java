@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,32 @@ public class MainActivity extends AppCompatActivity {
     CheckBox chkAccepte;
     Button btnSauvegarder;
     Button btnQuitter;
+
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+        Log.i("Début de l'activité", "onCreate");
+    }
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+        Log.i("Bouton quitter", "onClick");
+    }
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        Log.i("Bouton quitter/Non", "setNegativeButton");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("Quitter l'application", "setPositiveButton");
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
