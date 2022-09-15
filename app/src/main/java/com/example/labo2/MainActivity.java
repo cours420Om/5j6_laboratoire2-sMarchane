@@ -1,14 +1,20 @@
 package com.example.labo2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,5 +78,50 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        btnSauvegarder.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                Context contexte = getApplicationContext();
+                String texte = "Le profil est sauvegardé";
+                int duree = Toast.LENGTH_LONG;
+
+                Toast msg_toast = Toast.makeText(contexte, texte, duree);
+
+                msg_toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+                msg_toast.show();
+
+            }
+        });
+
+        btnQuitter.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                closeApp();
+            }
+        });
     }
+
+    private void closeApp() {
+
+
+        new AlertDialog.Builder(this).setMessage("Êtes-vous sûr de vouloir quitter l'application!")
+                .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getApplicationContext(), "Retour", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+    }
+
+
 }
